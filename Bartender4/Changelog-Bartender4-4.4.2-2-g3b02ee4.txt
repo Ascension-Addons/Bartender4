@@ -1,0 +1,3 @@
+Hendrik Leppkes:
+	- Improved sliders in the options with softMin/softMax and bigStep to offer more freedom in configuration.
+	- Remove old unused option code snippet

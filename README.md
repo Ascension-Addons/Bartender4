@@ -1,3 +1,3 @@
-# Addon Name
+# Bartender4
 
-This is the repository for <Addon Name>. Modified for Ascension.gg. 
+This is the repository for Bartender4. Modified for Ascension.gg. 
