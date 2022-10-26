@@ -84,6 +84,31 @@ local DefaultStanceMap = setmetatable({}, { __index = function(t,k)
 		newT = {
 			{ id = "metamorphosis", name = GetSpellInfo(59672), index = 2, type = "form"},
 		}
+	elseif k == "HERO" then
+		newT = {
+			-- Warrior
+			{ id = "battle", name = GetSpellInfo(2457), index = 1},
+			{ id = "def", name = GetSpellInfo(71), index = 2 },
+			{ id = "berserker", name = GetSpellInfo(2458), index = 3 },
+
+			-- Druid
+			{ id = "bear", name = GetSpellInfo(5487), index = 3 },
+			{ id = "cat", name = GetSpellInfo(768), index = 1 },
+				-- prowl is virtual, no real stance
+			{ id = "prowl", name = ("%s (%s)"):format((GetSpellInfo(768)), (GetSpellInfo(5215))), index = false},
+			{ id = "moonkin", name = GetSpellInfo(24858), index = 4 },
+			{ id = "treeoflife", name = GetSpellInfo(33891), index = 2 },
+
+			-- Rogue
+			{ id = "stealth", name = GetSpellInfo(1784), index = 1 },
+			{ id = "shadowdance", name = GetSpellInfo(51713), index = 2 },
+
+			-- Priest
+			{ id = "shadowform", name = GetSpellInfo(15473), index = 1 },
+
+			-- Warlock
+			{ id = "metamorphosis", name = GetSpellInfo(59672), index = 2, type = "form"},
+		}
 	end
 	rawset(t, k, newT)
 
@@ -134,7 +159,7 @@ function StateBar:UpdateStates(returnOnly)
 				local state = self:GetStanceState(v)
 				if state and state ~= 0 and v.index then
 					-- hack for druid prowl, since its no real "stance", but we want to handle it anyway
-					if playerclass == "DRUID" and v.id == "cat" then
+					if (playerclass == "DRUID" or playerclass == "HERO") and v.id == "cat" then
 						local prowl = self:GetStanceState("prowl")
 						if prowl and prowl ~= 0 then
 							table_insert(statedriver, fmt("[bonusbar:%s,stealth:1]%s", v.index, prowl))

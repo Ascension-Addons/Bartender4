@@ -3,7 +3,13 @@
 	All rights reserved.
 ]]
 
-if not HasMultiCastActionBar or select(2, UnitClass("player")) ~= "DRUID" then return end
+if not HasMultiCastActionBar then return end
+
+local classMask = UnitClassMask("player")
+
+if not bit.contains(EnumUtil.CombineMasks(Enum.ClassMask.DRUID, Enum.ClassMask.HERO), classMask) then
+	return
+end 
 
 -- fetch upvalues
 local L = LibStub("AceLocale-3.0"):GetLocale("Bartender4")

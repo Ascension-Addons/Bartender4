@@ -151,6 +151,7 @@ end
 local _, class = UnitClass("player")
 local stanceClasses = {
 	DRUID = true,
+	HERO = true,
 	WARRIOR = true,
 	WARLOCK = true,
 	PRIEST = true,
