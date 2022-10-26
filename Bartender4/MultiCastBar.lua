@@ -3,7 +3,7 @@
 	All rights reserved.
 ]]
 
-if not HasMultiCastActionBar or select(2, UnitClass("player")) ~= "DRUID" then return end
+if not HasMultiCastActionBar then return end
 
 -- fetch upvalues
 local L = LibStub("AceLocale-3.0"):GetLocale("Bartender4")
