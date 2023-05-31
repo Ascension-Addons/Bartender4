@@ -7,7 +7,7 @@ if not HasMultiCastActionBar then return end
 
 local classMask = UnitClassMask("player")
 
-if not bit.contains(EnumUtil.CombineMasks(Enum.ClassMask.DRUID, Enum.ClassMask.HERO), classMask) then
+if not bit.contains(EnumUtil.CombineMasks(Enum.ClassMask.SHAMAN, Enum.ClassMask.HERO), classMask) then
 	return
 end 
 
