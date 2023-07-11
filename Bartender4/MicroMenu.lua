@@ -45,6 +45,7 @@ function MicroMenuMod:OnEnable()
 		table_insert(buttons, LFDMicroButton)
 		table_insert(buttons, MainMenuMicroButton)
 		table_insert(buttons, HelpMicroButton)
+		table_insert(buttons, ChallengesMicroButton)
 		self.bar.buttons = buttons
 
 		MicroMenuMod.button_count = #buttons
