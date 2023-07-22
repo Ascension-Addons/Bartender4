@@ -323,6 +323,7 @@ function Button:RefreshStateAction(state)
 end
 
 function Button:UpdateSelfCast()
+	self:SetAttribute("checkmouseovercast", true)
 	self:SetAttribute("checkselfcast", Bartender4.db.profile.selfcastmodifier and true or nil)
 	self:SetAttribute("checkfocuscast", Bartender4.db.profile.focuscastmodifier and true or nil)
 	self:SetAttribute("unit2", Bartender4.db.profile.selfcastrightclick and "player" or nil)
