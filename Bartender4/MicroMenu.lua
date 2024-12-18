@@ -83,8 +83,8 @@ function MicroMenuMod:UpdateMicroButtons()
 	end
 end
 
-MicroMenuBar.button_width = 28
-MicroMenuBar.button_height = 58
+MicroMenuBar.button_width = 27
+MicroMenuBar.button_height = 40
 MicroMenuBar.vpad_offset = 0
 function MicroMenuBar:ApplyConfig(config)
 	ButtonBar.ApplyConfig(self, config)
