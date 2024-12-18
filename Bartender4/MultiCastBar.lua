@@ -25,7 +25,14 @@ local MultiCastMod = Bartender4:NewModule("MultiCast")
 -- create prototype information
 local MultiCastBar = setmetatable({}, {__index = Bar})
 
+local function OnShowMultiCastActionBar()
+	if MultiCastMod:IsEnabled() then
+		MultiCastMod:ApplyConfig()
+	end
+end
+
 function MultiCastMod:OnInitialize()
+	hooksecurefunc("ShowMultiCastActionBar", OnShowMultiCastActionBar)
 	self.db = Bartender4.db:RegisterNamespace("MultiCast", defaults)
 	self:SetEnabledState(self.db.profile.enabled)
 end
